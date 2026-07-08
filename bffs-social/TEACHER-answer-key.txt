@@ -1,0 +1,25 @@
+BFFs Practice Site — Teacher Answer Key
+(Do not share this file or folder path with students — keep it out of anything you host publicly.)
+
+TASK 1 — Inspecting the site
+Question: What is the name of the hidden admin page?
+Answer: portal-9f3k.html
+Where it's found: Right-click index.html > "View Page Source" > scroll to the bottom HTML comment
+(a fake "dev note" from a site maintainer named Casey).
+
+TASK 2 — Logging in
+Question: What is the username and password, in the form username:password?
+Answer: admin:admin
+Question: How many users are signed up to the application?
+Answer: 1,842 (shown on the dashboard after logging in)
+
+Notes for hosting:
+- This is a fully static site (HTML/CSS/JS only, no backend/server needed).
+- Works great on GitHub Pages, Netlify, or any static host, same as your other
+  classroom sites.
+- The "login" is intentionally done in client-side JavaScript so it's easy to host
+  with zero setup. A student who opens dev tools and reads portal-9f3k.html's <script>
+  can see the credentials directly in the source — that's a nice bonus teaching point
+  if a student asks "wait, couldn't I have just read the code instead of guessing?"
+  (Yes! That's a legitimate real-world technique too.)
+- All names, avatars, and posts are fictional.
