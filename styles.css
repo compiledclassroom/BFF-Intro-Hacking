@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap');
+
+:root {
+  --bubblegum: #ff6fa8;
+  --sky: #4fd1e0;
+  --sunshine: #ffd23f;
+  --cream: #fff8ee;
+  --grape: #3a2153;
+  --grape-soft: #6b4d8f;
+  --line: #f0c3d6;
+  --card: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--grape);
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+h1, h2, h3, .brand {
+  font-family: 'Baloo 2', cursive;
+  color: var(--grape);
+}
+
+a { color: inherit; }
+
+/* --- friendship bracelet divider, the signature element --- */
+.bracelet {
+  height: 14px;
+  width: 100%;
+  background-image:
+    repeating-linear-gradient(115deg,
+      var(--bubblegum) 0 10px,
+      var(--sunshine) 10px 20px,
+      var(--sky) 20px 30px,
+      var(--bubblegum) 30px 40px);
+  border-radius: 999px;
+  box-shadow: inset 0 2px 3px rgba(0,0,0,0.12);
+}
+
+/* --- top bar --- */
+.topbar {
+  background: var(--grape);
+  color: var(--cream);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.brand {
+  color: var(--sunshine);
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand .dot { color: var(--bubblegum); }
+
+.topbar nav a {
+  color: var(--cream);
+  text-decoration: none;
+  margin-left: 18px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.topbar nav a:hover { opacity: 1; text-decoration: underline wavy var(--sunshine); }
+
+/* --- layout --- */
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 28px 20px 60px;
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 24px;
+}
+
+@media (max-width: 720px) {
+  .page { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: var(--card);
+  border: 3px solid var(--line);
+  border-radius: 18px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  box-shadow: 4px 4px 0 var(--line);
+}
+
+/* --- feed posts --- */
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--bubblegum), var(--sky));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Baloo 2', cursive;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.post-name { font-weight: 800; }
+.post-time { font-size: 0.8rem; color: var(--grape-soft); }
+
+.post-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--grape-soft);
+  font-weight: 700;
+}
+
+/* --- sidebar --- */
+.sidebar h3 { margin-top: 0; font-size: 1.05rem; }
+
+.friend-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.friend-chip .avatar { width: 30px; height: 30px; font-size: 0.75rem; }
+
+.tag {
+  display: inline-block;
+  background: var(--sunshine);
+  color: var(--grape);
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  margin: 2px 4px 2px 0;
+}
+
+/* --- forms (login) --- */
+.form-wrap {
+  max-width: 380px;
+  margin: 60px auto;
+}
+
+.form-wrap input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border-radius: 12px;
+  border: 3px solid var(--line);
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+}
+
+.form-wrap input:focus {
+  outline: 3px solid var(--sky);
+  border-color: var(--sky);
+}
+
+.btn {
+  display: inline-block;
+  background: var(--bubblegum);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 26px;
+  font-family: 'Baloo 2', cursive;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 var(--grape);
+}
+
+.btn:hover { transform: translateY(-1px); }
+
+.error-msg {
+  color: #b3234a;
+  font-weight: 700;
+  background: #ffe3ec;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  display: none;
+}
+
+.footer-note {
+  text-align: center;
+  color: var(--grape-soft);
+  font-size: 0.8rem;
+  margin-top: 40px;
+}
+
+/* --- admin dashboard --- */
+.stat-box {
+  background: linear-gradient(135deg, var(--sky), var(--bubblegum));
+  color: white;
+  border-radius: 16px;
+  padding: 22px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.stat-box .num {
+  font-family: 'Baloo 2', cursive;
+  font-size: 2.6rem;
+  font-weight: 800;
+  display: block;
+}
+
+table.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+table.user-table th, table.user-table td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+table.user-table th { color: var(--grape-soft); font-size: 0.8rem; text-transform: uppercase; }
